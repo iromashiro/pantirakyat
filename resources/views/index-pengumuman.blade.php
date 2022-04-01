@@ -5,7 +5,7 @@
         <h3>Pengumuman</h3>
         <br>
         @foreach ($pengumuman as $b)
-        <a href="#" class="d-flex pb-3">
+        <a href="{{ route('pengumuman.satu', $b->slug) }}" class="d-flex pb-3">
             <div class="align-self-center">
                 <img src="{{ URL::asset($b->thumbnail) }}" class="rounded-sm" width="100">
             </div>
@@ -26,7 +26,7 @@
         <br>
 
         @foreach ($berita as $p)
-        <a href="#" class="d-flex">
+        <a href="{{ route('berita.satu', $p->slug) }}" class="d-flex">
             <div class="align-self-center">
                 <img src="{{ $p->thumbnail }}" class="rounded-sm" width="60">
             </div>
