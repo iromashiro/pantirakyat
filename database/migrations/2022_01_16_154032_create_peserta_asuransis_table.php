@@ -31,7 +31,7 @@ class CreatePesertaAsuransisTable extends Migration
             $table->string('no_rekening', 100)->nullable();//
             $table->string('nama_bank', 100)->nullable();//
             $table->string('ahli_waris', 100)->nullable();//
-            $table->date('no_hp')->nullable();
+            $table->string('no_hp')->nullable();
             $table->string('keterangan_dinsos', 100)->nullable();
             $table->string('keterangan_asuransi', 100)->nullable();
             $table->date('tanggal_meninggal')->nullable();
