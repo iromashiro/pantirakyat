@@ -10,6 +10,7 @@ use App\Models\Regency;
 use App\Models\Village;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 
 class PesertaAsuransiController extends Controller
 {
@@ -55,16 +56,16 @@ class PesertaAsuransiController extends Controller
         return redirect()->route('admin');
     }
 
-    public function index_dinsos()
+    public function index_dinsos(Request $request)
     {
         $peserta = PesertaAsuransi::all();
         return view('admin.peserta_asuransi.index_dinsos', compact('peserta'));
+
     }
 
-    public function viewVerifikasiPesertaDinsos($id)
+    public function viewVerifikasiPesertaDinsos(Request $request, $id)
     {
         $peserta = PesertaAsuransi::find($id);
-
         return view('admin.verifikasi.verifikasi_dinsos', compact('peserta'));
     }
 
@@ -186,5 +187,18 @@ class PesertaAsuransiController extends Controller
             'nov',
             'des'
         ));
+    }
+
+    public function print_dinsos(Request $request)
+    {
+        $bulan = $request->bulan;
+        $tahun = $request->tahun;
+        $x = PesertaAsuransi::whereYear('tanggal_mengajukan', '=', 2022)
+        ->whereMonth('created_at', '=', 4)
+        ->get();
+
+        dd($x);
+
+        return view('admin.print.asuransi', compact('x'));
     }
 }

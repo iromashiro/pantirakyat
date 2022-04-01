@@ -1,13 +1,52 @@
 @extends('layouts.admin')
 @section('konten')
+
 <div class="row mt-4">
     <div class="col-12">
         <div class="card">
             <!-- Card header -->
             <div class="card-header">
 
-                <h5 class="mb-0">Verifikasi Dinas Sosial</h5>
+                <form action="{{ route('print.dinsos') }}" method="GET">
+                    <div class="row mt-4">
+                        <div class="col-4">
+                            <div class="input-group input-group-dynamic">
+                                <select name="bulan" class="form-control w-100">
+                                    <option value="0" selected disabled> Pilih Bulan</option>
+                                    <option value="01"> Januari</option>
+                                    <option value="02"> Februari</option>
+                                    <option value="03"> Maret</option>
+                                    <option value="04"> April</option>
+                                    <option value="05"> Mei</option>
+                                    <option value="06"> Juni</option>
+                                    <option value="07"> Juli</option>
+                                    <option value="08"> Agustus</option>
+                                    <option value="09"> September</option>
+                                    <option value="10"> Oktober</option>
+                                    <option value="11"> November</option>
+                                    <option value="12"> Desember</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="input-group input-group-dynamic">
+                                <select name="tahun" class="form-control w-100">
+                                    <option selected disabled>Tahun</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success">Print</button>
+                </form>
+
             </div>
+
             <div class="table-responsive">
                 <table class="table table-flush" id="datatable-search">
                     <thead class="thead-light">
@@ -99,8 +138,7 @@
                             <td>{{$p->kelurahan}}</td>
                             <td>
 
-                                <a href="" class="btn btn-danger"
-                                    onclick="return confirm('Anda yakin ingin menghapus data?');">
+                                <a href="" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data?');">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
@@ -118,8 +156,9 @@
 <script src="{{URL::asset('belakang/js/plugins/datatables.js')}}"></script>
 <script>
     const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
-    searchable: true,
-    fixedHeight: true
-  });
+        searchable: true
+        , fixedHeight: true
+    });
+
 </script>
 @endsection

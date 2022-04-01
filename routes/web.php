@@ -8,6 +8,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PengumumanController;
 use App\Models\Berita;
+use Illuminate\Http\Request;
+use App\Models\PesertaAsuransi;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +75,15 @@ Route::post('/asuransi/verifikasi_asuransi/update/{id}', [PesertaAsuransiControl
 Route::get('/dinsos/index', [PesertaAsuransiController::class, 'index_dinsos'])->name('index.dinsos');
 Route::get('/dinsos/verifikasi_dinsos/{id}', [PesertaAsuransiController::class, 'viewVerifikasiPesertaDinsos'])->name('view.verifikasi.peserta');
 Route::post('/dinsos/verifikasi_dinsos/update/{id}', [PesertaAsuransiController::class, 'verifikasiPesertaDinsos'])->name('verifikasi.dinsos');
+
+Route::get('print', function (Request $request) {
+
+    $bulan = $request->bulan;
+    $tahun = $request->tahun;
+    $x = PesertaAsuransi::whereYear('tanggal_mengajukan', '=', 2022)
+    ->whereMonth('created_at', '=', 4)
+    ->get();
+
+    dd($x);
+    return view('admin.print.asuransi', compact('x'));
+})->name('print.dinsos');
