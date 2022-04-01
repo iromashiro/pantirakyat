@@ -73,7 +73,7 @@
         <p class="color-white opacity-60 mb-0">
             Silahkan klik download untuk mengunduh form asuransi Kematian
         </p>
-        <a href="#" class="btn btn-s rounded-sm bg-highlight color-white mt-3 text-uppercase font-800">Get Started</a>
+        <a href="{{ URL::asset('guest/form_klaim.pdf') }}" class="btn btn-s rounded-sm bg-highlight color-white mt-3 text-uppercase font-800" download="">Download Form</a>
     </div>
     <div class="card-overlay bg-black opacity-70"></div>
 </div>
