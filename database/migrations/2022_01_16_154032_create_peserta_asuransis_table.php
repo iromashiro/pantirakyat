@@ -38,6 +38,7 @@ class CreatePesertaAsuransisTable extends Migration
             $table->date('tanggal_mengajukan')->nullable();//
             $table->date('tanggal_transfer')->nullable();//
             $table->boolean('status_meninggal')->default(0);
+            $table->string('tahun_data', 100)->nullable();
             $table->timestamps();
         });
     }

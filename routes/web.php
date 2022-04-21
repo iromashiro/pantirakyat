@@ -76,7 +76,7 @@ Route::get('/dinsos/index', [PesertaAsuransiController::class, 'index_dinsos'])-
 Route::get('/dinsos/verifikasi_dinsos/{id}', [PesertaAsuransiController::class, 'viewVerifikasiPesertaDinsos'])->name('view.verifikasi.peserta');
 Route::post('/dinsos/verifikasi_dinsos/update/{id}', [PesertaAsuransiController::class, 'verifikasiPesertaDinsos'])->name('verifikasi.dinsos');
 
-Route::get('print', function (Request $request) {
+Route::get('print/{', function (Request $request) {
 
     $bulan = $request->bulan;
     $tahun = $request->tahun;
