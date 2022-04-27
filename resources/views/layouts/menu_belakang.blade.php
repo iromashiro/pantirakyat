@@ -72,6 +72,12 @@
                     </a>
                 </li>
                 <li class="nav-item ">
+                    <a class="nav-link text-white " href="{{route('pengumuman.index')}}">
+                        <span class="sidenav-mini-icon"> PE </span>
+                        <span class="sidenav-normal ms-2 ps-1"> Pengumuman </span>
+                    </a>
+                </li>
+                <li class="nav-item ">
                     <a class="nav-link text-white " href="{{route('profil.index')}}">
                         <span class="sidenav-mini-icon"> P </span>
                         <span class="sidenav-normal ms-2 ps-1"> Profil </span>
@@ -92,9 +98,5 @@
             @csrf
         </form>
     </li>
-
-
-
-
 
 </ul>
