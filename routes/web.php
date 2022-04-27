@@ -84,6 +84,5 @@ Route::get('print/{', function (Request $request) {
     ->whereMonth('created_at', '=', 4)
     ->get();
 
-    dd($x);
     return view('admin.print.asuransi', compact('x'));
 })->name('print.dinsos');
