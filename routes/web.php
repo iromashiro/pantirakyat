@@ -22,7 +22,7 @@ use App\Models\PesertaAsuransi;
 |
 */
 
-Route::get('/', [IndexController::class, 'dashboard'])->name('dashboard');
+Route::get('/dash', [IndexController::class, 'dashboard'])->name('dashboard');
 
 // BERITA //
 Route::get('/berita/index', [BeritaController::class, 'index'])->name('berita.index');
@@ -81,8 +81,8 @@ Route::get('print/{', function (Request $request) {
     $bulan = $request->bulan;
     $tahun = $request->tahun;
     $x = PesertaAsuransi::whereYear('tanggal_mengajukan', '=', 2022)
-    ->whereMonth('created_at', '=', 4)
-    ->get();
+        ->whereMonth('created_at', '=', 4)
+        ->get();
 
     return view('admin.print.asuransi', compact('x'));
 })->name('print.dinsos');

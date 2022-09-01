@@ -12,7 +12,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">No KK</label>
-                                <input type="number" class="form-control w-100" aria-describedby="emailHelp" required name="no_kk">
+                                <input type="number" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="no_kk">
                             </div>
                         </div>
                     </div>
@@ -21,7 +22,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">NIK</label>
-                                <input type="number" class="form-control w-100" aria-describedby="emailHelp" required name="nik">
+                                <input type="number" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="nik">
                             </div>
                         </div>
                     </div>
@@ -30,7 +32,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required name="nama_lengkap">
+                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="nama_lengkap">
                             </div>
                         </div>
                     </div>
@@ -39,7 +42,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">Tempat Lahir</label>
-                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required name="tempat_lahir">
+                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="tempat_lahir">
                             </div>
                         </div>
                     </div>
@@ -48,7 +52,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">Tempat Lahir</label>
-                                <input type="date" class="form-control w-100" aria-describedby="emailHelp" required name="tanggal_lahir">
+                                <input type="date" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="tanggal_lahir">
                             </div>
                         </div>
                     </div>
@@ -83,7 +88,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">Pekerjaan</label>
-                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required name="pekerjaan">
+                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="pekerjaan">
                             </div>
                         </div>
                     </div>
@@ -92,7 +98,8 @@
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
                                 <label class="form-label">Alamat</label>
-                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required name="alamat">
+                                <input type="text" class="form-control w-100" aria-describedby="emailHelp" required
+                                    name="alamat">
                             </div>
                         </div>
                     </div>
@@ -100,7 +107,8 @@
                     <div class="row mt-4">
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
-                                <input class="form-control w-100" list="kecamatans" placeholder="Kecamatan" required name="kecamatan">
+                                <input class="form-control w-100" list="kecamatans" placeholder="Kecamatan" required
+                                    name="kecamatan">
                                 <datalist id="kecamatans">
                                     @foreach ($districts as $d)
                                     <option value="{{$d->name}}">
@@ -113,7 +121,8 @@
                     <div class="row mt-4">
                         <div class="col-12 col-sm-12">
                             <div class="input-group input-group-dynamic">
-                                <input class="form-control w-100" list="kelurahans" placeholder="Kelurahan" required name="kelurahan">
+                                <input class="form-control w-100" list="kelurahans" placeholder="Kelurahan" required
+                                    name="kelurahan">
                                 <datalist id="kelurahans">
                                     @foreach ($villages as $v)
                                     <option value="{{$v->name}}">
@@ -122,7 +131,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <br>
                     <button class="btn btn-success" type="submit">Tambahkan</button>

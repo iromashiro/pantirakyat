@@ -60,7 +60,6 @@ class PesertaAsuransiController extends Controller
     {
         $peserta = PesertaAsuransi::all();
         return view('admin.peserta_asuransi.index_dinsos', compact('peserta'));
-
     }
 
     public function viewVerifikasiPesertaDinsos(Request $request, $id)
@@ -149,6 +148,7 @@ class PesertaAsuransiController extends Controller
         $des = PesertaAsuransi::whereMonth('tanggal_meninggal', date('m', strtotime('2021-12-01')))->count();
 
         // TAHUN //
+        $peserta = PesertaAsuransi::where('admin_id', '=', auth('admin')->user()->id)->get();
 
 
         return view('admin.dashboard', compact(
@@ -185,7 +185,8 @@ class PesertaAsuransiController extends Controller
             'sep',
             'okt',
             'nov',
-            'des'
+            'des',
+            'peserta'
         ));
     }
 
@@ -194,8 +195,8 @@ class PesertaAsuransiController extends Controller
         $bulan = $request->bulan;
         $tahun = $request->tahun;
         $x = PesertaAsuransi::whereYear('tanggal_mengajukan', '=', 2022)
-        ->whereMonth('created_at', '=', 4)
-        ->get();
+            ->whereMonth('created_at', '=', 4)
+            ->get();
 
         dd($x);
 

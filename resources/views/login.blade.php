@@ -59,14 +59,6 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </span>
                         </button>
-                        <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
-                            <ul class="navbar-nav d-lg-block d-none">
-                                <li class="nav-item">
-                                    <a href="{{route('dashboard')}}" class="btn btn-sm  bg-gradient-primary  mb-0"
-                                        onclick="smoothToPricing('pricing-soft-ui')">Kembali ke Beranda</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </nav>
                 <!-- End Navbar -->
@@ -81,7 +73,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
-                                style="background-image: url('muara_enim.png'); background-size: cover;">
+                                style="background-image: url('belakang/12.jpeg'); background-size: cover;">
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">

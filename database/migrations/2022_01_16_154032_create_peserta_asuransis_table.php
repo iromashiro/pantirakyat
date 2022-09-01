@@ -15,6 +15,7 @@ class CreatePesertaAsuransisTable extends Migration
     {
         Schema::create('peserta_asuransis', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('admin_id')->unsigned()->nullable();
             $table->string('no_kk', 100);
             $table->string('nik', 100)->unique();
             $table->string('nama_lengkap');
@@ -28,17 +29,19 @@ class CreatePesertaAsuransisTable extends Migration
             $table->string('kelurahan', 100)->nullable();
             $table->string('verifikasi_dinsos')->default(0);
             $table->string('verifikasi_asuransi')->default(0);
-            $table->string('no_rekening', 100)->nullable();//
-            $table->string('nama_bank', 100)->nullable();//
-            $table->string('ahli_waris', 100)->nullable();//
+            $table->string('no_rekening', 100)->nullable(); //
+            $table->string('nama_bank', 100)->nullable(); //
+            $table->string('ahli_waris', 100)->nullable(); //
             $table->string('no_hp')->nullable();
             $table->string('keterangan_dinsos', 100)->nullable();
             $table->string('keterangan_asuransi', 100)->nullable();
             $table->date('tanggal_meninggal')->nullable();
-            $table->date('tanggal_mengajukan')->nullable();//
-            $table->date('tanggal_transfer')->nullable();//
+            $table->date('tanggal_mengajukan')->nullable(); //
+            $table->date('tanggal_transfer')->nullable(); //
             $table->boolean('status_meninggal')->default(0);
             $table->string('tahun_data', 100)->nullable();
+
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
             $table->timestamps();
         });
     }

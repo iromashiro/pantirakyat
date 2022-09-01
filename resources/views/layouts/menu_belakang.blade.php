@@ -1,6 +1,7 @@
 <ul class="navbar-nav">
     <li class="nav-item mb-2 mt-0">
-        <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav" role="button" aria-expanded="false">
+        <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav"
+            role="button" aria-expanded="false">
             <img src="" class="avatar">
             <span class="nav-link-text ms-2 ps-1"> {{ auth('admin')->user()->name }}</span>
         </a>
@@ -17,8 +18,10 @@
             <span class="nav-link-text ms-2 ps-1">Dashboard</span>
         </a>
     </li>
+    @admin('admin_asuransi')
     <li class="nav-item">
-        <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white" aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+        <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white"
+            aria-controls="dashboardsExamples" role="button" aria-expanded="false">
             <i class="material-icons-round opacity-10">dashboard</i>
             <span class="nav-link-text ms-2 ps-1">Peserta</span>
         </a>
@@ -38,7 +41,6 @@
                     </a>
                 </li>
 
-                @admin('asuransi')
                 <li class="nav-item ">
                     <a class="nav-link text-white " href="{{route('index.dinsos')}}">
                         <span class="sidenav-mini-icon"> VD </span>
@@ -52,14 +54,15 @@
                         <span class="sidenav-normal ms-2 ps-1"> Verifikasi Asuransi </span>
                     </a>
                 </li>
-                @endadmin
             </ul>
         </div>
     </li>
+    @endadmin
 
     @admin('super')
     <li class="nav-item">
-        <a data-bs-toggle="collapse" href="#dashboardsExample" class="nav-link text-white" aria-controls="dashboardsExample" role="button" aria-expanded="false">
+        <a data-bs-toggle="collapse" href="#dashboardsExample" class="nav-link text-white"
+            aria-controls="dashboardsExample" role="button" aria-expanded="false">
             <i class="material-icons-round opacity-10">dashboard</i>
             <span class="nav-link-text ms-2 ps-1">Setting</span>
         </a>

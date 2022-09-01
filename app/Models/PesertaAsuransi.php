@@ -20,6 +20,7 @@ class PesertaAsuransi extends Model
      * @var array
      */
     protected $fillable = [
+        'admin_id',
         'no_kk',
         'nik',
         'nama_lengkap',

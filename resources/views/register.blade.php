@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{URL::asset('belakang/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{URL::asset('belakang/img/favicon.png')}}">
     <title>
-        OKETERA
+        {{ env('NAME') }}
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -44,33 +44,147 @@
             <div class="page-header min-vh-100">
                 <div class="container">
                     <div class="row">
-                        <div
-                            class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-                            <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
-                                style="background-image: url('muara_enim.png'); background-size: cover;">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+                        <div class="col-md-12">
                             <div class="card card-plain">
                                 <div class="card-header">
                                     <h4 class="font-weight-bolder">Daftar Akun</h4>
-                                    <p class="mb-0">Masukkan Identitas Pelaku Usaha</p>
+                                    <p class="mb-0">Masukkan Identitas Peserta Asuransi</p>
                                 </div>
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('admin.register') }}" role="form">
                                         @csrf
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">Nama Pelaku Usaha</label>
-                                            <input type="text"
-                                                class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                                value="{{ old('name') }}" name="name" required>
+
+                                        <input type="text" class="form-control " aria-describedby="emailHelp" required
+                                            name="admin_id" hidden value="{{ $kd }}">
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">No KK</label>
+                                                    <input type="number" class="form-control "
+                                                        aria-describedby="emailHelp" required name="no_kk">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">Bidang Pelaku Usaha</label>
-                                            <input type="text"
-                                                class="form-control {{ $errors->has('bidang') ? ' is-invalid' : '' }}"
-                                                value="{{ old('bidang') }}" name="bidang" required>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">NIK</label>
+                                                    <input type="number" class="form-control "
+                                                        aria-describedby="emailHelp" required name="nik">
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">Nama Lengkap</label>
+                                                    <input type="text" class="form-control "
+                                                        aria-describedby="emailHelp" id="nama_lengkap" required
+                                                        name="nama_lengkap">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" class="form-control " aria-describedby="emailHelp" id="name"
+                                            required name="name" hidden>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">Tempat Lahir</label>
+                                                    <input type="text" class="form-control "
+                                                        aria-describedby="emailHelp" required name="tempat_lahir">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">Tempat Lahir</label>
+                                                    <input type="date" class="form-control "
+                                                        aria-describedby="emailHelp" required name="tanggal_lahir">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <select name="jenis_kelamin" class="form-control ">
+                                                        <option selected disabled>Jenis Kelamin</option>
+                                                        <option value="1">Laki-laki</option>
+                                                        <option value="2">Perempuan</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <select name="status_kawin" class="form-control ">
+                                                        <option selected disabled>Status Kawin</option>
+                                                        <option value="1">Belum Kawin</option>
+                                                        <option value="2">Kawin</option>
+                                                        <option value="3">Duda</option>
+                                                        <option value="4">Janda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">Pekerjaan</label>
+                                                    <input type="text" class="form-control "
+                                                        aria-describedby="emailHelp" required name="pekerjaan">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <label class="form-label">Alamat</label>
+                                                    <input type="text" class="form-control "
+                                                        aria-describedby="emailHelp" required name="alamat">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <input class="form-control " list="kecamatans"
+                                                        placeholder="Kecamatan" required name="kecamatan">
+                                                    <datalist id="kecamatans">
+                                                        @foreach ($districts as $d)
+                                                        <option value="{{$d->name}}">
+                                                            @endforeach
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-sm-12">
+                                                <div class="input-group input-group-outline mb-3">
+                                                    <input class="form-control " list="kelurahans"
+                                                        placeholder="Kelurahan" required name="kelurahan">
+                                                    <datalist id="kelurahans">
+                                                        @foreach ($villages as $v)
+                                                        <option value="{{$v->name}}">
+                                                            @endforeach
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">Email</label>
                                             <input type="email"
@@ -90,25 +204,13 @@
                                             <input id="password-confirm" type="password" class="form-control"
                                                 name="password_confirmation" required>
                                         </div>
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">Contact Person</label>
-                                            <input type="number" min="1"
-                                                class="form-control {{ $errors->has('cp') ? ' is-invalid' : '' }}"
-                                                value="{{ old('cp') }}" name="cp" required>
-                                        </div>
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">Alamat Pelaku Usaha</label>
-                                            <input type="text"
-                                                class="form-control {{ $errors->has('alamat_perusahaan') ? ' is-invalid' : '' }}"
-                                                value="{{ old('alamat_perusahaan') }}" name="alamat_perusahaan"
-                                                required>
-                                        </div>
 
-                                        <input type="hidden" name="role_id" value="2">
+
+                                        <input type="hidden" name="role_id" value="4">
 
                                         <div class="text-center">
                                             <button type="submit"
-                                                class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Daftar</button>
+                                                class="btn btn-lg bg-gradient-primary btn-lg  mt-4 mb-0">Daftar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -151,6 +253,13 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{URL::asset('belakang/js/material-dashboard.min.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $('#nama_lengkap').change(function() {
+        $('#name').val($(this).val());
+        });
+    </script>
 </body>
 
 </html>
