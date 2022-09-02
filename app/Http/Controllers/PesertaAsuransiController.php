@@ -148,7 +148,7 @@ class PesertaAsuransiController extends Controller
         $des = PesertaAsuransi::whereMonth('tanggal_meninggal', date('m', strtotime('2021-12-01')))->count();
 
         // TAHUN //
-        $peserta = PesertaAsuransi::where('admin_id', '=', auth('admin')->user()->id)->get();
+        $peserta = PesertaAsuransi::where('admin_id', '==', auth('admin')->user()->id)->get();
 
 
         return view('admin.dashboard', compact(
