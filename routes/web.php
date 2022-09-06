@@ -23,6 +23,7 @@ use App\Models\PesertaAsuransi;
 */
 
 Route::get('/dash', [IndexController::class, 'dashboard'])->name('dashboard');
+Route::get('/peserta/ajax', [ProfilController::class, 'peserta_ajax'])->name('peserta.ajax');
 
 // BERITA //
 Route::get('/berita/index', [BeritaController::class, 'index'])->name('berita.index');
